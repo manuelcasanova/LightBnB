@@ -1,3 +1,6 @@
+// const properties = require('./json/properties.json');
+// const users = require('./json/users.json');
+
 const { Pool } = require('pg');
 const pool = new Pool({
   user: 'manuelcasanova',
@@ -5,7 +8,6 @@ const pool = new Pool({
   host: 'localhost',
   database: 'lightbnb'
 });
-
 
 
 //pool.connect().then( ()=>console.log("connected")).catch(error=>console.log("error is", error));
@@ -19,20 +21,19 @@ const pool = new Pool({
  * @param {String} email The email of the user.
  * @return {Promise<{}>} A promise to the user.
  */
-const getUserWithEmail = function(email) {
-  let user;
-  for (const userId in users) {
-    user = users[userId];
-    console.log("TEST")
-    if (user.email.toLowerCase() === email.toLowerCase()) {
-      break;
-    } else {
-      user = null;
-    }
-  }
-  return Promise.resolve(user);
+ const getUserWithEmail = function (email) {
+  return pool.
+  query(`SELECT * FROM users WHERE email = $1`, [email])
+    .then(result => {
+      if (result.rows) {
+        return result.rows[0]
+      } else {
+        return null
+      }
+    })
 }
 exports.getUserWithEmail = getUserWithEmail;
+
 
 /**
  * Get a single user from the database given their id.
@@ -78,14 +79,7 @@ exports.getAllReservations = getAllReservations;
  * @param {*} limit The number of results to return.
  * @return {Promise<[{}]>}  A promise to the properties.
  */
-// const getAllProperties = function(options, limit = 10) {
-//   const limitedProperties = {};
-//   for (let i = 1; i <= limit; i++) {
-//     limitedProperties[i] = properties[i];
-//   }
-//   return Promise.resolve(limitedProperties);
-// }
-const getAllProperties = (options, limit = 10) => {
+ const getAllProperties = (options, limit = 10) => {
   return pool
     .query(`SELECT * FROM properties LIMIT $1`, [limit])
     .then((result) => {
@@ -97,8 +91,8 @@ const getAllProperties = (options, limit = 10) => {
     });
 };
 
-
 exports.getAllProperties = getAllProperties;
+
 
 
 /**
