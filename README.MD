@@ -39,6 +39,14 @@ Create listing page
 3. Start the web server using the `npm run local` command from the /ligthBnB_WebApp directory. The app will be served at <http://localhost:3000/>.
 4. Go to <http://localhost:3000/> in your browser.
 
+## Examples of use
+
+1. Login with email tristanjacobs@gmail.com and password: password
+2. My listings --> 1 property (Plenty rate)
+3. Search by city: Edmonton --> 4 properties
+4. Search by city: Edmonton, Maximum Cost: 800 --> 2 properties
+5. Search by city: Edmonton, Maximum Cost: 800, Minimum Rating: 4 --> 1 property 
+
 ## Dependencies
 
 - Bcrypt: ^3.0.6
