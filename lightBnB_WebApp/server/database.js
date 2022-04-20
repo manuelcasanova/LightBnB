@@ -174,7 +174,6 @@ exports.getAllProperties = getAllProperties;
       property['parking_spaces'] || null,
       property['number_of_bathrooms'] || null,
       property['number_of_bedrooms'] || null
-      // property['number_of_bedrooms'] ? property['number_of_bedrooms'] : null
     ];
   
     const queryString = `
