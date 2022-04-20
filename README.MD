@@ -14,11 +14,19 @@ Main page
 
 ![Main page](https://github.com/manuelcasanova/LightBnB/blob/master/screenshots/main.png?raw=true)
 
+Log in page
+
 ![Log in page](https://github.com/manuelcasanova/LightBnB/blob/master/screenshots/login.png?raw=true)
+
+Logged in page
 
 ![Logged in page](https://github.com/manuelcasanova/LightBnB/blob/master/screenshots/loggedin.png?raw=true)
 
+Search page
+
 ![Search page](https://github.com/manuelcasanova/LightBnB/blob/master/screenshots/search.png?raw=true)
+
+Create listing page
 
 ![Create listing](https://github.com/manuelcasanova/LightBnB/blob/master/screenshots/addproperty.png?raw=true)
 
@@ -29,7 +37,7 @@ Main page
 2. Clone your repository onto your local device.
 3. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command from the /ligthBnB_WebApp directory. The app will be served at <http://localhost:3000/>.
-4. Go to <http://localhost:8080/> in your browser.
+4. Go to <http://localhost:3000/> in your browser.
 
 ## Dependencies
 
