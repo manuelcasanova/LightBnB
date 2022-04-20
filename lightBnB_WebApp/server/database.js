@@ -171,9 +171,10 @@ exports.getAllProperties = getAllProperties;
       property['province'],
       property['post_code'],
       property['country'],
-      property['parking_spaces'],
-      property['number_of_bathrooms'],
-      property['number_of_bedrooms']
+      property['parking_spaces'] || null,
+      property['number_of_bathrooms'] || null,
+      property['number_of_bedrooms'] || null
+      // property['number_of_bedrooms'] ? property['number_of_bedrooms'] : null
     ];
   
     const queryString = `
